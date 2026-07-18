@@ -1,39 +1,31 @@
-const header = document.querySelector('[data-header]');
-const year = document.querySelector('[data-year]');
-const hero = document.querySelector('.hero');
+const root = document.documentElement;
+const themeButton = document.querySelector('[data-theme-toggle]');
+const savedTheme = localStorage.getItem('theme');
+const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
-year.textContent = new Date().getFullYear();
-
-const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 24);
-updateHeader();
-window.addEventListener('scroll', updateHeader, { passive: true });
-
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const revealItems = document.querySelectorAll('.reveal');
-
-if (reducedMotion || !('IntersectionObserver' in window)) {
-  revealItems.forEach((item) => item.classList.add('visible'));
-} else {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
-
-  revealItems.forEach((item, index) => {
-    item.style.transitionDelay = `${Math.min(index % 4, 3) * 70}ms`;
-    observer.observe(item);
-  });
+function setTheme(theme) {
+  root.dataset.theme = theme;
+  localStorage.setItem('theme', theme);
+  if (themeButton) {
+    themeButton.querySelector('span').textContent = theme === 'dark' ? '☾' : '☼';
+    themeButton.setAttribute('aria-label', theme === 'dark' ? '切换到浅色主题' : '切换到深色主题');
+  }
 }
 
-if (!reducedMotion && hero && window.matchMedia('(pointer: fine)').matches) {
-  hero.addEventListener('pointermove', (event) => {
-    const x = (event.clientX / window.innerWidth - 0.5) * 18;
-    const y = (event.clientY / window.innerHeight - 0.5) * 10;
-    hero.style.setProperty('--signal-x', `${x}px`);
-    hero.style.setProperty('--signal-y', `${y}px`);
+setTheme(savedTheme || preferredTheme);
+themeButton?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
+
+document.querySelectorAll('[data-year]').forEach((node) => { node.textContent = new Date().getFullYear(); });
+
+document.querySelectorAll('[data-copy]').forEach((button) => {
+  button.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(button.dataset.copy);
+      const toast = document.querySelector('[data-toast]');
+      toast?.classList.add('show');
+      window.setTimeout(() => toast?.classList.remove('show'), 1600);
+    } catch {
+      window.location.href = `mailto:${button.dataset.copy}`;
+    }
   });
-}
+});

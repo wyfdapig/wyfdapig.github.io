@@ -1,194 +1,73 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="聂士钦，北京交通大学计算机技术硕士研究生，研究时间序列分析、异常检测与大语言模型。">
-  <meta name="theme-color" content="#071a2b">
-  <title>聂士钦 · 时间序列与智能系统</title>
+  <meta name="description" content="聂士钦，北京交通大学硕士研究生，研究时间序列、异常检测与大语言模型。">
+  <meta name="theme-color" content="#f7f8fc">
+  <title>聂士钦｜个人主页</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">跳到主要内容</a>
-
-  <header class="site-header" data-header>
-    <a class="brand" href="#top" aria-label="返回首页">
-      <span class="brand-mark" aria-hidden="true">NSQ</span>
-      <span class="brand-name">聂士钦</span>
-    </a>
+  <header class="topbar">
+    <a class="logo" href="index.html" aria-label="聂士钦的主页"><span>聂</span>聂士钦</a>
     <nav class="nav" aria-label="主导航">
-      <a href="#research">研究</a>
-      <a href="#experience">经历</a>
-      <a href="#about">关于</a>
+      <a class="active" href="index.html">首页</a>
+      <a href="about.html">关于</a>
+      <a href="research.html">研究</a>
+      <a href="experience.html">经历</a>
     </nav>
-    <a class="header-contact" href="mailto:nieshiqinemail@163.com">联系我 <span aria-hidden="true">↗</span></a>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换明暗主题"><span aria-hidden="true">☼</span></button>
   </header>
 
-  <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="signal-stage" aria-hidden="true">
-        <svg class="signal-svg" viewBox="0 0 1600 520" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="signal-gradient" x1="0" x2="1">
-              <stop offset="0" stop-color="#54d7ff" stop-opacity="0"/>
-              <stop offset=".18" stop-color="#54d7ff"/>
-              <stop offset=".74" stop-color="#a7f3d0"/>
-              <stop offset="1" stop-color="#a7f3d0" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <path class="signal-halo" d="M0 300 C110 300 120 288 220 300 S350 306 430 300 L500 300 L530 225 L562 382 L600 260 L628 318 L655 300 C760 294 820 312 925 300 S1080 288 1180 300 L1216 300 L1240 266 L1264 336 L1290 282 L1318 306 L1345 300 C1450 294 1510 300 1600 300"/>
-          <path class="signal-line" d="M0 300 C110 300 120 288 220 300 S350 306 430 300 L500 300 L530 225 L562 382 L600 260 L628 318 L655 300 C760 294 820 312 925 300 S1080 288 1180 300 L1216 300 L1240 266 L1264 336 L1290 282 L1318 306 L1345 300 C1450 294 1510 300 1600 300"/>
+  <main class="shell home">
+    <section class="hero-card">
+      <div class="hero-copy">
+        <p class="hello">👋 你好，我是</p>
+        <h1>聂士钦</h1>
+        <p class="lead">北京交通大学硕士研究生。<br>我在研究如何让机器更好地理解时间序列。</p>
+        <div class="hero-links">
+          <a class="button primary" href="research.html">看看我的研究 <span>→</span></a>
+          <a class="button secondary" href="https://github.com/wyfdapig" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="portrait-card" aria-label="时间序列研究主题插画">
+        <div class="status"><i></i> Open to collaborate</div>
+        <svg viewBox="0 0 440 260" role="img" aria-label="动态时间序列曲线">
+          <defs><linearGradient id="wave" x1="0" x2="1"><stop stop-color="#6558ff"/><stop offset="1" stop-color="#18a67e"/></linearGradient></defs>
+          <path class="wave-grid" d="M20 52H420M20 104H420M20 156H420M20 208H420M100 20V240M180 20V240M260 20V240M340 20V240"/>
+          <path class="wave" d="M20 146 C58 146 68 138 96 146 S132 150 152 146 L174 146 187 87 202 202 219 121 235 160 252 146 C286 140 302 151 330 146 S377 143 420 146"/>
+          <circle cx="202" cy="202" r="6"/>
         </svg>
-      </div>
-
-      <div class="hero-content">
-        <p class="eyebrow reveal">TIME SERIES · ANOMALY DETECTION · LLM</p>
-        <h1 id="hero-title" class="reveal">让机器读懂<br><em>时间</em>中的异常。</h1>
-        <div class="hero-bottom reveal">
-          <p class="hero-intro">你好，我是聂士钦。北京交通大学计算机技术硕士研究生，专注于不完整时间序列、异常检测与大语言模型的跨模态对齐。</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#research">查看研究 <span aria-hidden="true">↓</span></a>
-            <a class="button button-quiet" href="https://github.com/wyfdapig" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-meta reveal" aria-label="个人概览">
-        <span>北京 · 中国</span>
-        <span>BJTU · 计算机技术</span>
-        <span>开放合作 / OPEN TO COLLABORATE</span>
+        <div class="portrait-caption"><strong>Time Series</strong><span>Anomaly Detection · LLM</span></div>
       </div>
     </section>
 
-    <section class="research section" id="research" aria-labelledby="research-title">
-      <div class="section-heading reveal">
-        <p class="section-kicker">SELECTED RESEARCH</p>
-        <h2 id="research-title">研究不是堆叠模型，<br>而是找到数据真正缺失的那部分语义。</h2>
-      </div>
-
-      <article class="featured-project reveal">
-        <div class="project-index" aria-hidden="true">01</div>
-        <div class="project-main">
-          <div class="project-tags">
-            <span>KDD 2025</span>
-            <span>CCF-A</span>
-            <span>已录用</span>
-          </div>
-          <h3>Hierarchical Conditional Information Bottleneck Approach for Incomplete Time Series Classification</h3>
-          <p>针对真实工业场景中的不完整时间序列分类，将任务驱动的数据插补与层级信息瓶颈联合优化，让插补结果保留真正服务于分类的判别信息。</p>
-          <div class="project-result">
-            <strong>≈ 20%</strong>
-            <span>在多个 UCR / UEA 标准数据集上，相较 TimesNet 的平均分类准确率提升</span>
-          </div>
-        </div>
-        <div class="project-role">
-          <span>我的工作</span>
-          <p>学生第二作者；负责“基于任务驱动的数据插补”模块设计与落地，在潜在特征空间融合监督对比学习。</p>
-        </div>
-      </article>
-
-      <article class="research-card reveal">
-        <div class="project-index" aria-hidden="true">02</div>
-        <div class="research-card-title">
-          <p class="card-meta">2025.10 — 至今 · 学生负责人</p>
-          <h3>知识驱动的跨模态<br>大语言模型时序对齐</h3>
-        </div>
-        <div class="research-card-copy">
-          <p>面向民航运维中的“语义稀疏”与模态失配，构建动态原型引导的大小模型协同架构，将连续物理信号映射到可推理的离散语义空间。</p>
-          <ul class="clean-list">
-            <li><span>语义解耦原型库</span>以软注意检索避免硬匹配造成的语义截断</li>
-            <li><span>双路模型协同表征</span>轻量编码器与流形对齐层连接 GPT-2 隐空间</li>
-            <li><span>参数高效微调</span>将检索到的时序语义注入 prompt 完成领域适配</li>
-          </ul>
-          <div class="outcome-strip">
-            <span>AUC-ROC 较现有 SOTA 平均提升 10%</span>
-            <span>ADMA 2026 投稿 · 第一作者</span>
-          </div>
-        </div>
-      </article>
+    <section class="quick-grid" aria-label="内容入口">
+      <a class="quick-card blue" href="about.html">
+        <span class="card-icon">☺</span><div><small>ABOUT ME</small><h2>关于我</h2><p>教育背景、方向与技能</p></div><b>↗</b>
+      </a>
+      <a class="quick-card green" href="research.html">
+        <span class="card-icon">⌁</span><div><small>RESEARCH</small><h2>研究项目</h2><p>KDD 2025 与时序大模型</p></div><b>↗</b>
+      </a>
+      <a class="quick-card purple" href="experience.html">
+        <span class="card-icon">✦</span><div><small>EXPERIENCE</small><h2>实践经历</h2><p>从算法到真实业务系统</p></div><b>↗</b>
+      </a>
     </section>
 
-    <section class="experience section" id="experience" aria-labelledby="experience-title">
-      <div class="section-label reveal">
-        <p class="section-kicker">FROM LAB TO FIELD</p>
-        <h2 id="experience-title">把算法带到真实系统里。</h2>
-      </div>
-
-      <div class="experience-layout">
-        <aside class="company-card reveal">
-          <span class="company-monogram" aria-hidden="true">CT</span>
-          <p>中国电信北京研究院</p>
-          <h3>AI 研发中心<br>算法研究员</h3>
-          <time>2025.05 — 2025.08</time>
-        </aside>
-
-        <div class="experience-items">
-          <article class="experience-item reveal">
-            <div class="experience-number">01</div>
-            <div>
-              <h3>接入网光功率异常检测与趋势分析</h3>
-              <p>面向海量光衰监测数据，构建覆盖数据接入、资源拓扑分析到告警结论生成的完整自动化链路；以无监督统计和多维阈值识别陡升、陡降等劣化趋势。</p>
-            </div>
-            <strong>准确率<br><b>80%</b></strong>
-          </article>
-          <article class="experience-item reveal">
-            <div class="experience-number">02</div>
-            <div>
-              <h3>IPTV 异常检测多维根因下钻</h3>
-              <p>解析多源日志与维度配置，设计无监督异常归因评分体系；基于 YARN 完成海量日志批量分析，为一线运维提供直接的根因定位依据。</p>
-            </div>
-            <strong>根因下钻<br><b>65%+</b></strong>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="about section" id="about" aria-labelledby="about-title">
-      <div class="about-intro reveal">
-        <p class="section-kicker">PROFILE / 个人档案</p>
-        <h2 id="about-title">研究连续信号，<br>也相信持续积累。</h2>
-      </div>
-
-      <div class="about-grid">
-        <div class="education reveal">
-          <h3>教育经历</h3>
-          <div class="timeline-item">
-            <time>2024 — 至今</time>
-            <div><strong>北京交通大学</strong><span>计算机技术 · 硕士研究生</span></div>
-          </div>
-          <div class="timeline-item">
-            <time>2020 — 2024</time>
-            <div><strong>南京农业大学</strong><span>自动化 · 工学学士</span></div>
-          </div>
-          <div class="language-score"><span>CET-6</span><strong>545</strong><span>CET-4</span><strong>535</strong></div>
-        </div>
-
-        <div class="toolbox reveal">
-          <h3>研究工具箱</h3>
-          <div class="skill-cloud" aria-label="技能列表">
-            <span>Python</span><span>PyTorch</span><span>时间序列建模</span><span>异常检测</span><span>Prompt Tuning</span><span>参数高效微调</span><span>NumPy</span><span>Pandas</span><span>机器学习</span><span>深度学习</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact section" aria-labelledby="contact-title">
-      <p class="section-kicker reveal">LET'S CONNECT</p>
-      <div class="contact-row reveal">
-        <h2 id="contact-title">有值得一起研究的问题？</h2>
-        <a href="mailto:nieshiqinemail@163.com" aria-label="发送邮件给聂士钦">写封邮件 <span aria-hidden="true">↗</span></a>
-      </div>
-      <p class="contact-email reveal">nieshiqinemail@163.com</p>
+    <section class="now-card">
+      <div><span class="eyebrow">NOW / 现在</span><h2>正在做什么？</h2></div>
+      <p>研究知识驱动的跨模态时序对齐，尝试让大语言模型理解连续信号中的模式与异常。</p>
+      <span class="now-tag">ADMA 2026 投稿中</span>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <span>© <span data-year></span> NIE SHIQIN</span>
-    <span>RESEARCH · BUILD · EXPLAIN</span>
-    <a href="#top">回到顶部 ↑</a>
+  <footer class="footer shell">
+    <span>© <span data-year></span> 聂士钦</span>
+    <button type="button" class="copy-email" data-copy="nieshiqinemail@163.com">复制邮箱</button>
   </footer>
+  <div class="toast" data-toast role="status" aria-live="polite">邮箱已复制</div>
 </body>
 </html>
