@@ -161,30 +161,113 @@
       </header>
 
       <div class="research-list">
-        <article class="research-card card">
+        <article class="research-card card research-kdd">
           <div class="research-meta">
-            <span class="status">KDD 2025 · 已录用</span>
-            <span>CCF-A · 学生第二作者</span>
+            <span class="status">2025.08 · 已发表</span>
+            <span>学生第二作者 · 论文第三作者</span>
           </div>
-          <h3>Hierarchical Conditional Information Bottleneck Approach for Incomplete Time Series Classification</h3>
-          <p>针对不完整时间序列分类，联合优化任务驱动的数据插补与层级信息瓶颈。在潜在空间融合监督对比学习，让插补结果保留对分类最有判别力的信息。</p>
+
+          <div class="venue-banner">
+            <div>
+              <span class="venue-kicker">TOP CONFERENCE · ACCEPTED</span>
+              <strong class="venue-name">KDD 2025</strong>
+            </div>
+            <span class="venue-rank">CCF-A</span>
+          </div>
+
+          <h3>Loss or Gain: Hierarchical Conditional Information Bottleneck Approach for Incomplete Time Series Classification</h3>
+          <p class="paper-authors">Shuo Zhang · Jing Wang · <b>Shiqin Nie</b> · Jinghang Yue · Weikang Zhu · Youfang Lin</p>
+          <p>面向真实场景中普遍存在的缺失时间序列，提出层次条件信息瓶颈（HCIB）框架。研究不再只追求“把缺失值补得像”，而是从分类任务出发，辨析缺失数据带来的关键信息损失（Loss）与干扰抑制收益（Gain），通过端到端联合优化，让插补结果真正服务于后续判别。</p>
+
+          <div class="research-details">
+            <div>
+              <span>01</span>
+              <h4>任务驱动插补</h4>
+              <p>以标签信息作为条件约束，提出任务信息充分性准则，避免重建精度与分类效果脱节。</p>
+            </div>
+            <div>
+              <span>02</span>
+              <h4>层次信息瓶颈</h4>
+              <p>在插补层压缩冗余信息，在表示层学习紧凑且具有判别力的多尺度时序表征。</p>
+            </div>
+            <div>
+              <span>03</span>
+              <h4>多场景验证</h4>
+              <p>覆盖多变量、单变量与自然缺失数据，系统评估 20%—80% 不同缺失比例下的鲁棒性。</p>
+            </div>
+          </div>
+
+          <figure class="paper-figure compact">
+            <a href="assets/hcib-concept.png" target="_blank" aria-label="查看 HCIB 论文核心思想图原图">
+              <img src="assets/hcib-concept.png" alt="HCIB 论文中完整与不完整数据分类信息差异的核心思想图" loading="lazy">
+            </a>
+            <figcaption>
+              <span><b>HCIB 核心思想图</b> · 完整与不完整数据中的任务信息损失及干扰抑制收益</span>
+              <span>点击查看原图 ↗</span>
+            </figcaption>
+          </figure>
+
           <div class="research-bottom">
-            <div><strong>≈20%</strong><span>相较 TimesNet 的平均分类准确率提升</span></div>
-            <ul><li>UCR / UEA</li><li>数据插补</li><li>信息瓶颈</li></ul>
+            <div><strong>+7%</strong><span>多变量数据集上较次优方法的平均准确率提升</span></div>
+            <ul><li>23 个数据集</li><li>单变量 7/8 最优</li><li>DOI: 10.1145/3711896.3737033</li></ul>
           </div>
+          <a class="paper-link" href="https://doi.org/10.1145/3711896.3737033" target="_blank" rel="noreferrer">查看 ACM 论文页面 ↗</a>
         </article>
 
-        <article class="research-card card accent">
+        <article class="research-card card accent research-tii">
           <div class="research-meta">
             <span class="status">2025.10 — 至今</span>
             <span>学生负责人 · 第一作者</span>
           </div>
-          <h3>知识驱动的跨模态大语言模型时序对齐研究</h3>
-          <p>面向民航运维中的语义稀疏与模态失配问题，以动态原型库、轻量编码器和流形对齐层连接连续物理信号与语言模型语义空间。</p>
-          <div class="research-bottom">
-            <div><strong>+10%</strong><span>AUC-ROC 较现有 SOTA 平均提升</span></div>
-            <ul><li>GPT-2</li><li>动态原型</li><li>ADMA 2026 投稿</li></ul>
+
+          <div class="venue-banner">
+            <div>
+              <span class="venue-kicker">MANUSCRIPT SUBMITTED</span>
+              <strong class="venue-name">IEEE TII</strong>
+            </div>
+            <div class="venue-rank-group">
+              <span class="venue-rank">SCI · JCR 一区</span>
+              <span class="venue-note">SCIE 收录 · JCR Q1 · 2024 JIF 9.9</span>
+            </div>
           </div>
+
+          <h3>知识驱动的跨模态大语言模型时序对齐研究</h3>
+          <p class="paper-title-en">论文产出：TS-Aligner: Mamba-Based Prompt Alignment for LLM-Enhanced Time Series Anomaly Detection</p>
+          <p>针对连续数值信号与离散语言语义之间的模态鸿沟，提出跨模态提示对齐框架 TS-Aligner。模型以 Bi-Mamba 捕获长程、非线性时序依赖，再从可学习 Prompt Pool 中动态检索 Top-K 语义锚点，将时间表征稳定映射到 GPT-2 的语义空间，最终通过重构误差完成异常检测。</p>
+
+          <div class="research-details">
+            <div>
+              <span>01</span>
+              <h4>Bi-Mamba 时序编码</h4>
+              <p>通过双向选择性状态空间建模，同时利用前后文，以线性复杂度编码连续物理信号。</p>
+            </div>
+            <div>
+              <span>02</span>
+              <h4>动态 Prompt 对齐</h4>
+              <p>构建可学习提示池，按余弦相似度检索 Top-K 语义锚点，并加入显式几何对齐约束。</p>
+            </div>
+            <div>
+              <span>03</span>
+              <h4>两阶段稳定训练</h4>
+              <p>先预热时序编码器，再联合优化跨模态对齐与部分 GPT-2 参数，降低模态冲突。</p>
+            </div>
+          </div>
+
+          <figure class="paper-figure">
+            <a href="assets/ts-aligner-framework.png" target="_blank" aria-label="查看 TS-Aligner 主模型图原图">
+              <img src="assets/ts-aligner-framework.png" alt="TS-Aligner 主模型图：Bi-Mamba、动态提示池、跨模态对齐、GPT-2 与异常检测流程" loading="lazy">
+            </a>
+            <figcaption>
+              <span><b>TS-Aligner 主模型图</b> · Bi-Mamba 编码、动态提示检索、跨模态对齐与 GPT-2 重构</span>
+              <span>点击查看原图 ↗</span>
+            </figcaption>
+          </figure>
+
+          <div class="research-bottom">
+            <div><strong>4 / 5</strong><span>真实数据集取得最优 AUC-ROC，另一项排名第二</span></div>
+            <ul><li>SMAP / SWaT / MSL / PSM / SMD</li><li>10% 数据量验证</li><li>IEEE TII 在投</li></ul>
+          </div>
+          <a class="paper-link" href="https://www.ieee-ies.org/pubs/transactions-on-industrial-informatics" target="_blank" rel="noreferrer">了解 IEEE Transactions on Industrial Informatics ↗</a>
         </article>
       </div>
     </section>
