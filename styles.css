@@ -79,12 +79,22 @@ button{font:inherit;color:inherit}
 .card{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}
 
 .education-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.education-card{position:relative;display:flex;align-items:center;gap:22px;padding:28px}
-.school-badge{display:grid;place-items:center;width:68px;height:68px;border-radius:20px;color:var(--ink);background:var(--green);font:800 .7rem/1 var(--mono)}
-.school-badge.light{background:var(--lavender)}
+.education-card{position:relative;display:flex;align-items:flex-start;gap:22px;padding:30px}
+.school-badge{display:grid;place-items:center;flex:0 0 72px;width:72px;height:72px;padding:9px;border-radius:20px;background:color-mix(in srgb,var(--green) 42%,#fff);overflow:hidden}
+.school-badge.light{background:color-mix(in srgb,var(--lavender) 52%,#fff)}
+.school-badge img{display:block;width:100%;height:100%;object-fit:contain}
+.school-copy{min-width:0;flex:1}
 .school-copy time{color:var(--muted);font:600 .65rem/1 var(--mono)}
 .school-copy h3{margin:7px 0 5px;font-size:1.35rem}
-.school-copy p{margin:0;color:var(--muted);font-size:.8rem}
+.school-copy p{margin:0}
+.education-degree{color:var(--muted);font-size:.8rem;font-weight:620}
+.education-link,.education-role{display:inline-flex;align-items:center;gap:7px;margin-top:17px!important;color:var(--ink);font-size:.79rem;font-weight:760;line-height:1.5}
+.education-link{padding-bottom:2px;border-bottom:1px solid color-mix(in srgb,var(--ink) 24%,transparent);transition:border-color .2s,color .2s}
+.education-link:hover{color:#003690;border-color:#003690}
+.education-link span{font-family:var(--mono)}
+.education-note{margin-top:13px!important;color:var(--muted);font-size:.76rem;line-height:1.78}
+.education-tags{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 0;padding:0;list-style:none}
+.education-tags li{padding:7px 10px;border-radius:999px;background:var(--soft);color:var(--ink);font-size:.67rem;font-weight:650;line-height:1}
 .card-arrow{position:absolute;top:22px;right:22px}
 .language-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;margin-top:16px;padding:18px 24px;border-radius:16px;background:var(--ink);color:#fff;font-size:.72rem}
 .language-row>span{color:#aeb1a8}
@@ -224,8 +234,11 @@ button{font:inherit;color:inherit}
   .hero-actions{flex-direction:column}
   .button{justify-content:space-between}
   .portrait{border-radius:22px}
-  .education-card{align-items:flex-start;padding:22px}
-  .school-badge{width:54px;height:54px;border-radius:15px}
+  .education-card{gap:16px;padding:22px}
+  .school-badge{flex-basis:54px;width:54px;height:54px;padding:7px;border-radius:15px}
+  .school-copy h3{font-size:1.2rem}
+  .education-link,.education-role{margin-top:14px!important}
+  .education-note{font-size:.74rem}
   .card-arrow{display:none}
   .internship-card,.research-card,.skills-panel,.explore-card{padding:24px}
   .venue-banner{align-items:flex-start;flex-direction:column;padding:24px 20px}
