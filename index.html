@@ -164,7 +164,7 @@
         <article class="research-card card research-kdd">
           <div class="research-meta">
             <span class="status">2025.08 · 已发表</span>
-            <span>学生第二作者 · 论文第三作者</span>
+            <span class="role-highlight">学生第二作者</span>
           </div>
 
           <div class="venue-banner">
@@ -176,8 +176,10 @@
           </div>
 
           <h3>Loss or Gain: Hierarchical Conditional Information Bottleneck Approach for Incomplete Time Series Classification</h3>
-          <p class="paper-authors">Shuo Zhang · Jing Wang · <b>Shiqin Nie</b> · Jinghang Yue · Weikang Zhu · Youfang Lin</p>
-          <p>面向真实场景中普遍存在的缺失时间序列，提出层次条件信息瓶颈（HCIB）框架。研究不再只追求“把缺失值补得像”，而是从分类任务出发，辨析缺失数据带来的关键信息损失（Loss）与干扰抑制收益（Gain），通过端到端联合优化，让插补结果真正服务于后续判别。</p>
+          <div class="research-summary">
+            <p>面向医疗监测、交通感知等真实场景中普遍存在的<strong>不完整时间序列分类</strong>问题，研究重新审视了缺失数据的双重影响：它既会造成关键时序模式与动态信息的损失（Loss），也可能通过去除干扰带来判别收益（Gain）。针对传统方法过度关注“插补值是否接近原值”、却忽略“插补结果是否真正有利于分类”的局限，论文提出<strong>层次条件信息瓶颈（HCIB）</strong>框架，将数据插补、特征表示和下游分类统一到端到端优化过程中。</p>
+            <p>在插补层，HCIB 以标签信息为条件约束，提出<strong>任务信息充分性准则</strong>，尽量恢复与类别相关的缺失信息并抑制无关噪声；在表示层，通过层次信息瓶颈进一步压缩冗余、保留判别性时序表征，并利用监督式对比学习增强类内聚合与类间分离。方法在<strong>23 个多变量、单变量及自然缺失数据集</strong>上进行了系统验证，多变量任务相较次优方法平均提升约 <strong>7%</strong>，显示出在高缺失率场景下稳定的分类能力。</p>
+          </div>
 
           <div class="research-details">
             <div>
@@ -197,12 +199,12 @@
             </div>
           </div>
 
-          <figure class="paper-figure compact">
-            <a href="assets/hcib-concept.png" target="_blank" aria-label="查看 HCIB 论文核心思想图原图">
-              <img src="assets/hcib-concept.png" alt="HCIB 论文中完整与不完整数据分类信息差异的核心思想图" loading="lazy">
+          <figure class="paper-figure">
+            <a href="assets/hcib-framework.png" target="_blank" aria-label="查看 HCIB 整体框架图原图">
+              <img src="assets/hcib-framework.png" alt="HCIB 整体框架图：任务驱动插补、监督式对比学习、时序分类编码器与分类器" loading="lazy">
             </a>
             <figcaption>
-              <span><b>HCIB 核心思想图</b> · 完整与不完整数据中的任务信息损失及干扰抑制收益</span>
+              <span><b>HCIB 整体框架图（Figure 2）</b> · 任务驱动插补、SCL 约束、时序分类编码与端到端预测</span>
               <span>点击查看原图 ↗</span>
             </figcaption>
           </figure>
@@ -217,7 +219,7 @@
         <article class="research-card card accent research-tii">
           <div class="research-meta">
             <span class="status">2025.10 — 至今</span>
-            <span>学生负责人 · 第一作者</span>
+            <span>学生负责人</span>
           </div>
 
           <div class="venue-banner">
@@ -233,7 +235,10 @@
 
           <h3>知识驱动的跨模态大语言模型时序对齐研究</h3>
           <p class="paper-title-en">论文产出：TS-Aligner: Mamba-Based Prompt Alignment for LLM-Enhanced Time Series Anomaly Detection</p>
-          <p>针对连续数值信号与离散语言语义之间的模态鸿沟，提出跨模态提示对齐框架 TS-Aligner。模型以 Bi-Mamba 捕获长程、非线性时序依赖，再从可学习 Prompt Pool 中动态检索 Top-K 语义锚点，将时间表征稳定映射到 GPT-2 的语义空间，最终通过重构误差完成异常检测。</p>
+          <div class="research-summary">
+            <p>针对连续数值信号与离散语言语义之间难以直接匹配的<strong>跨模态鸿沟</strong>，研究提出 TS-Aligner，将时间序列的动态结构转化为大语言模型能够理解和利用的提示表示。模型首先以 <strong>Bi-Mamba</strong> 同时建模前向与后向依赖，在保持线性复杂度的同时捕获长程、非线性时序模式；随后从可学习的 Prompt Pool 中动态检索 Top-K 语义锚点，使每个时间片段都能获得与自身状态相匹配的语言先验。</p>
+            <p>为避免时序特征被简单投影后产生语义漂移，框架加入<strong>显式几何对齐约束</strong>，在局部相似关系和全局分布层面共同拉近两种模态，并采用“两阶段训练”先稳定时序编码器、再联合优化对齐模块与部分 GPT-2 参数。最终利用重构误差完成异常定位，在 SMAP、SWaT、MSL、PSM、SMD 五个真实数据集上取得 <strong>4 项最优 AUC-ROC</strong>，并验证了仅使用 10% 训练数据时的低样本适应能力；相关论文已投稿 <strong>IEEE TII（SCIE、JCR Q1）</strong>。</p>
+          </div>
 
           <div class="research-details">
             <div>
