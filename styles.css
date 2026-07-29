@@ -145,7 +145,7 @@ button{font:inherit;color:inherit}
 .paper-figure{margin:28px 0 0;padding:14px;border:1px solid color-mix(in srgb,var(--ink) 13%,transparent);border-radius:20px;background:#fff}
 .paper-figure a{display:block;border-radius:12px;overflow:hidden;background:#fff}
 .paper-figure img{display:block;width:100%;height:auto;transition:transform .3s}
-.research-kdd .paper-figure img{width:calc(100% + 4px);max-width:none;margin:-2px}
+.research-kdd .paper-figure img{width:calc(100% + 12px);max-width:none;margin:-6px}
 .paper-figure a:hover img{transform:scale(1.012)}
 .paper-figure figcaption{display:flex;justify-content:space-between;gap:20px;padding:14px 4px 1px;color:var(--muted);font-size:.82rem;font-weight:520;line-height:1.6}
 .paper-figure figcaption b{color:var(--ink)}
